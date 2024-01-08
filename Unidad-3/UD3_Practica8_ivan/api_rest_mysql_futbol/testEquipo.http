@@ -1,0 +1,70 @@
+##
+## getEquipInfoById
+
+GET http://localhost:8090/api/v1/equipos/val/info HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFuIiwiaWF0IjoxNjc3NTk1OTQwLCJleHAiOjE2Nzc2MDE5NDB9.bVhIX4m6fFRupeDcwHAuDAdQC5XRO8-9VFna2Q-1F3cXq6KRvtLOhsPmNlgMG9rfgqD-ufgrENGGY4i7Tfz37w
+
+
+//EXAMEN 1
+
+
+###
+## getEquipInfoById
+
+GET http://localhost:8090/api/v1/equipos/xxx/info HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFuIiwiaWF0IjoxNjc3NTk2MjI5LCJleHAiOjE2Nzc2MDIyMjl9.p2ZV0VQ3rXau810sUoolMqDX5dObd2mzo5UzsOVaR36KOapskaE5-m5NXHEo9MUXJUcqnpGjtvkeHJ1zLlQpLg
+
+
+
+###
+## EliminarEquipo
+DELETE  http://localhost:8090/api/v1/equipos/Vll HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFuIiwiaWF0IjoxNjc3NjA1OTc0LCJleHAiOjE2Nzc2MTE5NzR9.2zVg_bwCI_mm8wCRRj8-mZ6ycvw6oa-RuvCAwynOgvvmmcp2eKhGMZrWUAICX0MIco9cKjczdGwgIgk2Si_VNQ
+
+
+###
+## NuevoEquipo
+
+POST http://localhost:8090/api/v1/nuevoEquipo HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFuIiwiaWF0IjoxNjc3NjA1OTc0LCJleHAiOjE2Nzc2MTE5NzR9.2zVg_bwCI_mm8wCRRj8-mZ6ycvw6oa-RuvCAwynOgvvmmcp2eKhGMZrWUAICX0MIco9cKjczdGwgIgk2Si_VNQ
+
+{
+    "id": "Vll",
+    "nombreCorto": "Valla",
+    "nombreLargo": "Vallada",
+    "ciudad": 8,
+    "entrenador": "Ivan",
+    "estadio": "ivan",
+    "marca": "ivan",
+    "patrocinador": "ivan",
+    "presupuesto": 58
+  
+ }   
+ 
+###
+## Modificar Equipo
+
+PUT http://localhost:8090/api/v1/equiposMod HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFuIiwiaWF0IjoxNjc3NTk4MDExLCJleHAiOjE2Nzc2MDQwMTF9.t_MsN-GKgKwXj5nOxvXf46Ba_TYAZEyEPqFihGfleJ4Y-fHB3z6Pqyzy1AKwOFdtNSG1612zPiZqL2CKCtv1rw
+
+
+{
+    "id": "Vll",
+    "nombreCorto": "Valldaaaa",
+    "nombreLargo": "Vallada",
+    "ciudad": 8,
+    "entrenador": "Ivan",
+    "estadio": "ivan",
+    "marca": "ivan",
+    "patrocinador": "ivan",
+    "presupuesto": 58
+  
+ }   
+ 
+
+ 

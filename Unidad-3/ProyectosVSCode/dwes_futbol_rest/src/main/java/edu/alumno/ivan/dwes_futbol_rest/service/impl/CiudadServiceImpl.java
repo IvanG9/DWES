@@ -1,0 +1,82 @@
+package edu.alumno.ivan.dwes_futbol_rest.service.impl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+
+import edu.alumno.ivan.dwes_futbol_rest.model.db.CiudadDb;
+import edu.alumno.ivan.dwes_futbol_rest.model.dto.CiudadInfo;
+import edu.alumno.ivan.dwes_futbol_rest.model.dto.CiudadList;
+import edu.alumno.ivan.dwes_futbol_rest.model.dto.PaginaDto;
+import edu.alumno.ivan.dwes_futbol_rest.reopsitory.CiudadRepository;
+import edu.alumno.ivan.dwes_futbol_rest.service.mapper.CiudadMapper;
+import edu.alumno.ivan.dwes_futbol_rest.service.CiudadService;
+
+@Service
+public class CiudadServiceImpl implements CiudadService {
+
+    private final CiudadRepository ciudadRepository;
+
+    public CiudadServiceImpl(CiudadRepository ciudadRepository) {
+        this.ciudadRepository = ciudadRepository;
+    }
+
+    @Override
+    public Optional<CiudadInfo> getCiudadInfoById(Long id) {
+        Optional<CiudadDb> ciudadDb = ciudadRepository.findById(id);
+
+        if (ciudadDb.isPresent()) {
+            return Optional.of(CiudadMapper.INSTANCE.ciudadDbToCiudadInfo(ciudadDb.get()));
+        }
+
+        return Optional.empty();
+    }
+
+    @Override
+    public List<CiudadList> findAllCiudadList() {
+        return CiudadMapper.INSTANCE.ciudadesToCiudadList(ciudadRepository.findAll());
+    }
+
+    @Override
+    public List<CiudadList> findAllCiudadList(Sort sort) {
+        return CiudadMapper.INSTANCE.ciudadesToCiudadList(ciudadRepository.findAll(sort));
+    }
+
+    @Override
+    public List<CiudadList> findByNombreContaining(String nombre, Sort sort) {
+        return CiudadMapper.INSTANCE.ciudadesToCiudadList(ciudadRepository.findByNombreContaining(nombre, sort));
+    }
+
+    @Override
+    public PaginaDto<CiudadList> findAllPageCiudadList(Pageable paging) {
+        Page<CiudadDb> paginaCiudadDb = ciudadRepository.findAll(paging);
+
+        return new PaginaDto<CiudadList>(
+            paginaCiudadDb.getNumber(),
+            paginaCiudadDb.getSize(),
+            paginaCiudadDb.getTotalElements(),
+            paginaCiudadDb.getTotalPages(),
+            CiudadMapper.INSTANCE.ciudadesToCiudadList(paginaCiudadDb.getContent()),
+            paginaCiudadDb.getSort()
+        );
+    }
+
+    @Override
+    public PaginaDto<CiudadList> findByNombreContaining(String nombre, Pageable paging) {
+        Page<CiudadDb> paginaCiudadDb = ciudadRepository.findByNombreContaining(paging, nombre);
+
+        return new PaginaDto<CiudadList>(
+            paginaCiudadDb.getNumber(),
+            paginaCiudadDb.getSize(),
+            paginaCiudadDb.getTotalElements(),
+            paginaCiudadDb.getTotalPages(),
+            CiudadMapper.INSTANCE.ciudadesToCiudadList(paginaCiudadDb.getContent()),
+            paginaCiudadDb.getSort()
+        );
+    }
+
+}

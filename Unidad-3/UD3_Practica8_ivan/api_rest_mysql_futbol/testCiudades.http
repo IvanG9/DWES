@@ -1,0 +1,91 @@
+## getCiudadesList
+GET http://localhost:8090/api/v1/ciudades HTTP/1.1
+Content-Type: application/json
+
+###
+## getCiudadesList
+GET http://localhost:8090/api/v1/ciudades?sort=habitantes,asc&sort=id,asc&page=4&size=10 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFuIiwiaWF0IjoxNjc3NTg5MzkyLCJleHAiOjE2Nzc1ODk5OTJ9.ScjJdTzKgfXFOWjNYi4Apfs4QGh6TL11DwG86uXrb2YQns4Je6eqx-jgU1Hh3pJuWkmLo8lIgK035bUCmfid_w
+###
+## getCiudadesList
+GET http://localhost:8090/api/v1/ciudades?sort=habitantes,asc&sort=id&page=4&size=10 HTTP/1.1
+Content-Type: application/json
+
+###
+## getCiudadesListOrdenAsc
+GET http://localhost:8090/api/v1/ciudades/orden/desc HTTP/1.1
+Content-Type: application/json
+
+###
+## getCiudadInfoById
+GET http://localhost:8090/api/v1/ciudades/56/info HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFuIiwiaWF0IjoxNjc3NjA4MDk4LCJleHAiOjE2Nzc2MTQwOTh9.k9Qvm541X3c1QrU-JD8VJM2-HtI2J4KlQCqOJXxWRUKXKoZIz03L1HAkSaHvdDloep5oZvj-oj-fKBMEgvvHyA
+###
+## getCiudadesByNombreContainingListOrderByName
+GET http://localhost:8090/api/v1/ciudades/nombre/Va/orden/desc HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFuIiwiaWF0IjoxNjc3NjA4MDk4LCJleHAiOjE2Nzc2MTQwOTh9.k9Qvm541X3c1QrU-JD8VJM2-HtI2J4KlQCqOJXxWRUKXKoZIz03L1HAkSaHvdDloep5oZvj-oj-fKBMEgvvHyA
+###
+## getAllEquipos
+GET http://localhost:8090/api/v1/equipos HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFuIiwiaWF0IjoxNjc3NTg1ODI0LCJleHAiOjE2Nzc1ODU4ODR9.2xzowKWsix-xMtViNaMuXBBtolnRoDdlIzKglir1KajQL56ztblLvlMdwyk1XJHqKnzdr53a45rfOM44yKV4cg
+
+###
+## getAllJugadores
+GET http://localhost:8090/api/v1/jugadores HTTP/1.1
+Content-Type: application/json
+
+
+###
+## getAllPorteros
+GET http://localhost:8090/api/v1/porteros HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFuIiwiaWF0IjoxNjc3NTg4MDIxLCJleHAiOjE2Nzc1ODgwODF9.fSEmwg_dIA2sS1D1fkOKQhZp3RYm3eKVTlSJi1XVsvidjsqPRFmwKyhAv6QlhnJlzLEH3IOdaUwvsg62PHER4w
+
+###
+## nuevo incorrecto
+POST http://localhost:8090/auth/nuevo HTTP/1.1
+Content-Type: application/json
+
+{
+    "nickname": "prueba",
+    "email": "@",
+    "password": "a",
+    "roles": ["admin"]
+}
+
+###
+## nuevo ok
+POST http://localhost:8090/auth/nuevo HTTP/1.1
+Content-Type: application/json
+
+{
+    "nickname": "pepe",
+    "nombre": "Alumne pepe",
+    "email": "pepe@gmail.com",
+    "password": "NoTeLoDigo1",
+    "roles": [""]
+}   
+
+###
+## login ok ADMIN
+POST http://localhost:8090/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "nickname" : "ivan",
+    "password" : "NoTeLoDigo1"
+}
+
+###
+## login ok USER
+POST http://localhost:8090/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "nickname" : "pepe",
+    "password" : "NoTeLoDigo1"
+}

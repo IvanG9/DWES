@@ -1,0 +1,44 @@
+###
+## nuevoEtrenador
+
+POST http://localhost:8090/api/v1/nuevoEntrenador HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFuIiwiaWF0IjoxNjc3NjA2NzYyLCJleHAiOjE2Nzc2MTI3NjJ9.P24O1MgNsvg-DxgWVgM1YV3kYrNgZs2kq292clLvuJTlmioO5J86czal8BNiPBWc0Sd7FtuTK07Okha4NF--Dg
+
+{
+
+  "nombre":"marc"
+  
+}   
+
+
+
+
+###
+## EliminarEtrenador
+DELETE  http://localhost:8090/api/v1/entrenador/1 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFuIiwiaWF0IjoxNjc3NjA1Nzc1LCJleHAiOjE2Nzc2MTE3NzV9.79szksaYDDd2NCctK5AcyRIS618aH4D2-jcF02Ff6B3ZowOZwrt4o2VffAGXhyhy8G5YCxfpyNA0X4_6xeLAcw
+
+
+###
+## Modificar Equipo
+
+PUT http://localhost:8090/api/v1/entrenadorMod HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFuIiwiaWF0IjoxNjc3NjA1Nzc1LCJleHAiOjE2Nzc2MTE3NzV9.79szksaYDDd2NCctK5AcyRIS618aH4D2-jcF02Ff6B3ZowOZwrt4o2VffAGXhyhy8G5YCxfpyNA0X4_6xeLAcw
+
+
+{
+
+  "id":4,
+  "nombre":"ivan"
+  
+}  
+
+###
+## Get All equipos
+
+GET http://localhost:8090/api/v1/equipos HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFuIiwiaWF0IjoxNjc3NjA4MDk4LCJleHAiOjE2Nzc2MTQwOTh9.k9Qvm541X3c1QrU-JD8VJM2-HtI2J4KlQCqOJXxWRUKXKoZIz03L1HAkSaHvdDloep5oZvj-oj-fKBMEgvvHyA

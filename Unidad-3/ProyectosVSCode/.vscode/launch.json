@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ApiRestMysqlFutbolApplication<api_rest_mysql_futbol>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "edu.alumno.miguel.api_rest_mysql_futbol.ApiRestMysqlFutbolApplication",
+            "projectName": "api_rest_mysql_futbol",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ApiRestMysqlFutbolApplication<api_rest_mysql_futbol>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "edu.alumno.ivan.api_rest_mysql_futbol.ApiRestMysqlFutbolApplication",
+            "projectName": "api_rest_mysql_futbol",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
